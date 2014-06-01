@@ -1,0 +1,77 @@
+
+<% if @support.errors.any? %>
+  
+<ul>
+    <% @support.errors.full_messages.each do |error| %>
+
+       <li> <%= error %> </li>
+
+    <% end %>
+</ul>
+<% end %>
+
+<%= form_for @support do |f| %>
+<form class="form-horizontal" role="form">  
+  
+  <div class="form-group" >
+    <%= f.label :name, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10" id="myid" > 
+    <%= f.text_field :name, class: "form-control", placeholder: "enter your name" %>
+    </div>
+    
+  </div>
+  
+  <div class="form-group">
+    <%= f.label :email, class: "col-sm-2 control-label" %> 
+    <div class="col-sm-10" id="myid">
+    <%= f.text_field :email, class: "form-control", placeholder: "enter your email" %>
+    </div>
+  </div>
+  
+
+  
+  <div class="form-group" >
+
+    <%= f.label :department, class: "col-sm-2 control-label"  %> 
+    
+    <div class=" col-sm-10" id="myid">
+    <div class="radio-inline">
+    
+    <%= f.radio_button(:department, "Sales") %>
+    <%= f.label :department,"Sales" %>
+    </div>
+
+    <div class="radio-inline">
+    <%= f.radio_button(:department, "Marketing") %>
+    <%= f.label :department,"Marketing" %> 
+    </div>
+  
+    <div class="radio-inline">
+    <%= f.radio_button(:department, "Technical") %>
+    <%= f.label :department,"Technical" %> 
+
+    </div>
+    </div>
+
+
+  </div>
+    
+    <br><br>
+
+  <div class="form-group" >
+    
+    <%= f.label :message, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10" id="myid" >
+    <%= f.text_area :message, class: "form-control" %>
+    </div>
+  
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10" id="myid">
+    <%= f.submit "save", class: "btn btn-primary" %>
+    </div>
+  </div>
+  
+</form>
+<% end%>

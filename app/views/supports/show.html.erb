@@ -1,0 +1,7 @@
+<h1> <%= @support.name %> </h1>
+
+<p> <%= @support.email %> </p>
+
+<%= link_to "Edit", edit_support_path(@support), class: "btn btn-info" %> 
+
+<%= link_to "Delete", @support, method: :delete, data: {confirm: "are you sure?"}, class: "btn btn-danger" %>
